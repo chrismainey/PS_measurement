@@ -1,0 +1,234 @@
+---
+title: "Analytics & Measurement in Patient Safety"
+subtitle: "A wander through my personal experience and work in the NHS"  
+author: 
+  - "Chris Mainey"
+date: '`r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    seal: false
+    css: theme.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+library(ragg)
+library(RefManageR)
+BibOptions(check.entries = FALSE, bib.style = "authoryear", style = "text",
+           dashed = FALSE, cite.style="authoryear", longnamesfirst=FALSE)
+
+#file.name <- system.file("Bib", "", package = "RefManageR")
+bib <- ReadBib("References.bib")
+
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = TRUE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE,
+  dev = "ragg_png"
+)
+```
+
+```{r R-Lang, echo=FALSE}
+# Choose the language at the beginning of your script or knit from external file
+lang <- c("EN", "FR")[1]
+```
+
+class: title-slide
+
+# Analytics & Measurement in Patient Safety
+
+<br><br>
+
+### A wander through my personal experience and work in the NHS
+
+
+<br><br><br><br><br>
+
+### <img src="./assets/img/crop.png" alt="Mainard icon" height="40px" />  Dr Chris Mainey
+
+`r icons::icon_style(icons::fontawesome("envelope"), fill = "#005EB8")` [c.mainey@nhs.net](mailto:c.mainey@nhs.net)
+`r icons::icon_style(icons::fontawesome("twitter"), fill = "#005EB8")` [@chrismainey](https://twitter.com/chrismainey)
+`r icons::icon_style(icons::fontawesome("github"), fill = "#005EB8")` [chrismainey](https://github.com/chrismainey)
+`r icons::icon_style(icons::fontawesome("linkedin"), fill = "#005EB8")`  [chrismainey](https://www.linkedin.com/in/chrismainey/)
+`r icons::icon_style(icons::fontawesome("orcid"), fill = "#005EB8")` [0000-0002-3018-6171](https://orcid.org/0000-0002-3018-6171)
+`r icons::icon_style(icons::fontawesome("globe"), fill = "#005EB8")` [www.mainard.co.uk](https://www.mainard.co.uk)
+
+.footnote[Presentation and code available: **https://github.com/chrismainey/risk_stratification_model_presentation**]
+
+.art_cap[R generative art - inspired by Antonio Sánchez Chinchón - @aschinchon]
+
+
+???
+
+__End 30 seconds__!
+
+Say hi - introduce myself
+
+???
+Presentation on github with references and code, share afterwards
+
+
+---
+class: inverse center middle
+
+## How risk stratification models could be used to improve health outcomes in the NHS
+
+
+???
+
+How you think risk stratification models could be used to improve health outcomes in the NHS
+
+---
+
+## What is risk-stratification?
++ Stratification (grouping or sorting) of population according to the risk of an event, usually determined by expert opinion, rule sets or statistical estimation of frequency based on correlated predictors.
+
+???
+These tools use relationships in historic population data to estimate the use of 
+health care services for each member of a population. Risk stratification tools can be useful both 
+for population planning purposes (known as “risk stratification for commissioning”) and for 
+identifying which patients should be offered targeted, preventive support (known as “risk 
+stratification for case finding”).
+
+
+
+--
+
+### Benefits for health outcomes
+
++ Quantified individual risk can allow for more personalised care in many settings
+
+--
+
++ Understanding distribution of needs
+  + Commissioning the right sized services to meet needs
+  + Planning and delivering service in a way that is accessible or appropriate to the population
+
+--
+
++ Monitoring: 
+  + Allow closer monitoring of high risk patients (e.g. diabetes patients and foot-care).
+  + Change in risk can itself be a trigger for intervention
+  + Quality / Outcome monitoring
+
+
+---
+class: inverse center middle
+
+## How to evaluate whether the risk stratification model(s) are reliably predicting population vs. individual risks
+
+???
+
+How you would evaluate whether the risk stratification model(s) was reliably predicting population vs. individual risks
+
+
+---
+
+> _"...Since all models are wrong the scientist must be alert to what is importantly wrong. It is inappropriate to be concerned about mice when there are tigers abroad..."_ `r Citep(bib, "Box1")`
+
+--
+
+### Assessing models
+
++ Models generally built for global accuracy (may or may not be population)
+
++ Understanding metrics:
+  + AUC / R<sup>2</sup> global proportion of variance explained
+  + MSE / RMSE / MAE - average errors per observation
+  
+--
+
+### Validation in the population
+
++ Sub-group / marginal analysis
+  + Understand where fit is poor
+  + Class imbalance
+  
++ Population weighting to assess fit e.g.`r Citep(bib, "vanaltenReweightingUKBiobank2022", .opts = list(max.names=2))`
+  
+
+---
+class: inverse center middle
+
+## Considerations for deployment of risk stratification models across a complex health and care system
+
+
+???
+Considerations for deployment of risk stratification models across a complex health and care system
+
+---
+
+> _"...The right balance between productivity and equity is a value judgement. The decision will 
+rest with ICBs, but a sensible one will engage with its population, their representatives 
+and its staff and explore the trade-offs they may be willing to make..."_ `r Citep(bib, "Wyatt1")`
+
+.pull-left[
+### Context
++ Awareness system you are working in and limitations
++ e.g. National VTE risk scoring
+  + Built for Acute providers
+  + How do we use it in mental health settings.
+
+<br><br>
+### Validation
++ Is this appropriate for your specific population / system?
++ Has it been tested in you population?
+]
+
+.pull-right[
+### Monitoring
+
++ Change of usecase, e.g.:
+  + Charlson score `r Citep(bib, "charlsonNewMethodClassifying1987", .opts = list(max.names=2))`
+  + NEWS2 for COVID-19 patients `r Citep(bib, "carrEvaluationImprovementNational2021", .opts = list(max.names=2))`
++ Model drift / retraining
++ Interaction with other metrics
+
+
+
+### Communication / engagement
+
++ Stakeholder engagement
++ Model, scope and limitations clear?
++ How can you take feedback?
+
+]
+
+---
+class: inverse center middle
+.pull-left[
+<img src="https://imgs.xkcd.com/comics/curve_fitting.png" alt="XKCD Curve-fitting" height="600px" />
+]
+
+.pull-right[
+
+<br><br><br><br><br><br>
+
+
+
+
+__Source:__ xkcd: A webcomic of romance, sarcasm, math, and language
+
+'Curve-Fitting Methods and the messages they send'
+
+https://xkcd.com/2048/
+]
+
+---
+class: references
+
+### References
+
+```{r, results='asis', echo=FALSE}
+PrintBibliography(bib)
+```
