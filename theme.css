@@ -41,6 +41,7 @@
   --header-h1-font-size: 2.75rem;
   --header-h2-font-size: 2.25rem;
   --header-h3-font-size: 1.75rem;
+  --header-h4-font-size: 1.65rem;
 
   /* Colors */
  --text-color: #212B32;
@@ -74,7 +75,7 @@ body {
   font-weight: normal;
   color: var(--text-color);
 }
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: var(--header-font-family), var(--header-font-family-fallback);
   font-weight: 600;
   color: var(--header-color);
@@ -96,6 +97,12 @@ h1, h2, h3 {
   font-size: var(--header-h3-font-size);
   line-height: 25px;
 }
+
+.remark-slide-content h3 {
+  font-size: var(--header-h4-font-size);
+  line-height: 25px;
+}
+
 .remark-code, .remark-inline-code {
   font-family: var(--code-font-family), Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
 }
@@ -121,9 +128,9 @@ a, a > code {
 }
 .footnote {
   position: absolute;
-  bottom: 60px;
+  bottom: 30px;
   padding-right: 4em;
-  font-size: 0.9em;
+  font-size: 0.6em;
 }
 
 .remark-code-line-highlighted {
@@ -161,7 +168,7 @@ a, a > code {
   background-color: var(--title-slide-background-color);
   background-image: url("./assets/img/artsy.png");
   background-size: 35%;
-  background-position: right 8% bottom 60%;
+  background-position: right 8% bottom 50%;
   /*background-clip: content-box;*/
 }
 
@@ -176,7 +183,7 @@ a, a > code {
 
 .art_cap {
   position: absolute;
-  bottom: 25%;
+  bottom: 20%;
   right: 8%;
   padding-right: 4em;
   font-size: 0.5em;
@@ -221,12 +228,14 @@ a, a > code {
 }
 img, video, iframe {
   max-width: 100%;
+  object-fit: contain;
 }
+
 blockquote {
-  border-left: solid 5px #F97B6480;
+  border-left: solid 5px #005EB8;
   padding-left: 1em;
   line-height: 30px;
-  background-color: #E8EDEE;
+  background-color: #DCDCDC;
   font-size: 16pt;
 }
 .remark-slide table {

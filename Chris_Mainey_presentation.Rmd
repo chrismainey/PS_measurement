@@ -49,10 +49,11 @@ class: title-slide
 
 <br><br>
 
-### A wander through my personal experience and work in the NHS
+### A wander through my personal experience 
+### and work in the NHS
 
 
-<br><br><br><br><br>
+<br><br>
 
 ### <img src="./assets/img/crop.png" alt="Mainard icon" height="40px" />  Dr Chris Mainey
 
@@ -63,146 +64,323 @@ class: title-slide
 `r icons::icon_style(icons::fontawesome("orcid"), fill = "#005EB8")` [0000-0002-3018-6171](https://orcid.org/0000-0002-3018-6171)
 `r icons::icon_style(icons::fontawesome("globe"), fill = "#005EB8")` [www.mainard.co.uk](https://www.mainard.co.uk)
 
-.footnote[Presentation and code available: **https://github.com/chrismainey/risk_stratification_model_presentation**]
+.footnote[Presentation and code available: **https://github.com/chrismainey/PS_measurement**]
 
 .art_cap[R generative art - inspired by Antonio Sánchez Chinchón - @aschinchon]
 
 
-???
-
-__End 30 seconds__!
-
-Say hi - introduce myself
-
-???
-Presentation on github with references and code, share afterwards
-
-
 ---
 class: inverse center middle
-
-## How risk stratification models could be used to improve health outcomes in the NHS
-
-
-???
-
-How you think risk stratification models could be used to improve health outcomes in the NHS
-
----
-
-## What is risk-stratification?
-+ Stratification (grouping or sorting) of population according to the risk of an event, usually determined by expert opinion, rule sets or statistical estimation of frequency based on correlated predictors.
-
-???
-These tools use relationships in historic population data to estimate the use of 
-health care services for each member of a population. Risk stratification tools can be useful both 
-for population planning purposes (known as “risk stratification for commissioning”) and for 
-identifying which patients should be offered targeted, preventive support (known as “risk 
-stratification for case finding”).
-
-
-
---
-
-### Benefits for health outcomes
-
-+ Quantified individual risk can allow for more personalised care in many settings
-
---
-
-+ Understanding distribution of needs
-  + Commissioning the right sized services to meet needs
-  + Planning and delivering service in a way that is accessible or appropriate to the population
-
---
-
-+ Monitoring: 
-  + Allow closer monitoring of high risk patients (e.g. diabetes patients and foot-care).
-  + Change in risk can itself be a trigger for intervention
-  + Quality / Outcome monitoring
-
-
----
-class: inverse center middle
-
-## How to evaluate whether the risk stratification model(s) are reliably predicting population vs. individual risks
-
-???
-
-How you would evaluate whether the risk stratification model(s) was reliably predicting population vs. individual risks
-
-
----
-
-> _"...Since all models are wrong the scientist must be alert to what is importantly wrong. It is inappropriate to be concerned about mice when there are tigers abroad..."_ `r Citep(bib, "Box1")`
-
---
-
-### Assessing models
-
-+ Models generally built for global accuracy (may or may not be population)
-
-+ Understanding metrics:
-  + AUC / R<sup>2</sup> global proportion of variance explained
-  + MSE / RMSE / MAE - average errors per observation
-  
---
-
-### Validation in the population
-
-+ Sub-group / marginal analysis
-  + Understand where fit is poor
-  + Class imbalance
-  
-+ Population weighting to assess fit e.g.`r Citep(bib, "vanaltenReweightingUKBiobank2022", .opts = list(max.names=2))`
-  
-
----
-class: inverse center middle
-
-## Considerations for deployment of risk stratification models across a complex health and care system
-
-
-???
-Considerations for deployment of risk stratification models across a complex health and care system
-
----
-
-> _"...The right balance between productivity and equity is a value judgement. The decision will 
-rest with ICBs, but a sensible one will engage with its population, their representatives 
-and its staff and explore the trade-offs they may be willing to make..."_ `r Citep(bib, "Wyatt1")`
 
 .pull-left[
-### Context
-+ Awareness system you are working in and limitations
-+ e.g. National VTE risk scoring
-  + Built for Acute providers
-  + How do we use it in mental health settings.
-
-<br><br>
-### Validation
-+ Is this appropriate for your specific population / system?
-+ Has it been tested in you population?
+<br>
+## Background, and progression to this role
 ]
 
 .pull-right[
-### Monitoring
-
-+ Change of usecase, e.g.:
-  + Charlson score `r Citep(bib, "charlsonNewMethodClassifying1987", .opts = list(max.names=2))`
-  + NEWS2 for COVID-19 patients `r Citep(bib, "carrEvaluationImprovementNational2021", .opts = list(max.names=2))`
-+ Model drift / retraining
-+ Interaction with other metrics
+<img src="https://media1.giphy.com/media/H5Ax4wLi7D7Elausl4/giphy.gif?cid=790b7611e64490feb1ebb99c89c34c151f68560728d983ec&rid=giphy.gif&ct=g" width="480" height="270"></img><p><a href="https://giphy.com/gifs/curbyourenthusiasm-season-10-curb-season10-H5Ax4wLi7D7Elausl4">via GIPHY</a></p>
+]
 
 
+---
 
-### Communication / engagement
+# Analytical  career
 
-+ Stakeholder engagement
-+ Model, scope and limitations clear?
-+ How can you take feedback?
++ Didn't start as an analyst
+
+--
+
++ Public Health - Cancer registry on to "Cancer Network."
+
+--
+
++ Acute trust informatics - exposure to production databases
+
+--
+
++ Progression to senior analyst
+  + Responsible for statistics models
+  + Started MPH course
+
+--
+
++ PhD in applied statistics and ML, on how to use incident reporting data
+
+--
+
++ Developed Senior Data Scientist role and Data Science team + external relationships
+
+--
+
++ Taken role in National Patient Safety Team
+
+---
+
+#  Essential experience
+
+.pull-left[
++ Excel
++ Relational Databases:
+  + Structure
+  + SQL
++ Summary Statistics
++ Data Visualisation
++ Dashboarding
++ Presentation to others
+
+
+
+__It's OK to not understand, but work with people who do...__
 
 ]
+
+.pull-right[
+
+<img src="https://lovestats.files.wordpress.com/2012/07/low-error-rate-meme.jpg">
+
+]
+
+---
+# Better Skills:
+
+.pull-left[
+
++ Asking the right question
++ Sector knowledge / dataset knowledge
++ Study design / how to answer questions
++ Statistical analysis / modelling
++ Collaborative working
+  + With other disciplines / clinical colleagues
+
+__You can't be good at everything, specialising is good__
+
+]
+
+.pull-right[
+ 
+<img src="http://37.media.tumblr.com/tumblr_m0w7ccQomh1rpjhxuo1_400.jpg">
+ 
+ ]
+
+---
+
+# Top skills:
+
+.pull-left[
+ 
++ Designing measurement / analytical plans
++ Balancing detail / signal and story
++ Reproducible Analytical Pipelines (RAP)
++ Within analysis projects
++ Communicating uncertainty in analysis
++ Causal Inference
++ Ability to apply emerging methods
+
+__Too many specialties...can't keep up with everything...__
+
+ ]
+
+.pull-right[
+
+<img src="https://lovestats.files.wordpress.com/2012/07/what-if-i-told-you-research-methods-meme.jpg">
+
+]
+
+  
+---
+class: inverse middle
+
+# National Patient Safety Team at NHSEI
+
+---
+.pull-left[
+## The Patient Safety Strategy
+
+<br>
+### Insight
+
+<br>
+### Involvement
+
+<br>
+### Improvement
+
+]
+
+.pull-right[
+
+<img src="./assets/img/PSStrategy.png" height="100%"></p>
+
+]
+
+.footnote[
+https://www.england.nhs.uk/patient-safety/the-nhs-patient-safety-strategy/#patient-safety-strategy
+]
+
+
+---
+class: inverse middle
+
+## Workstream 1: Analysis of incident reporting data
+
+---
+
+# Using Incident reporting data
+
++ Clinical (qualitative review) is major method
++ Finding relevant incidents
++ Quantitative approaches being reduced deliberately
++ Natural Language Processing (NLP)
+
+---
+class: inverse middle
+
+## Workstream 2: Measurement for the Patient Safety Improvement Programmes (SIPs)
+---
+
+.pull-left[
+## QI & SIPs
+
++ Quality Improvement now established as a discipline, with it's methods: PDSA cycle & variations: (Lean / Six-sigma etc.) 
+
++ Difficult for analysts to appreciate differences in monitoring, improvement, assurance etc.
+
+{{content}}
+
+]
+
+.pull-right[
+<p align="center"><img src="http://www.apiweb.org/images/model.png" alt="IHI and API improvement process diagram"></p>
+
+__IHI and API improvement process diagram: http://www.apiweb.org/__
+]
+
+--
+
++ 'Quality' and 'Patient Safety' something of a pseudo-science:
+  + Psychology
+  + Human Factors
+  + Process control (Shewhart / Deming)
+
+{{content}}
+  
+--
+
++ Contrasts with Donabedian model:
+  + Structures
+  + Process
+  + Outcomes
+
+---
+
+# Methods
+
++ Depends the question!!!
+
+.pull-left[
+
+### Run charts & SPC
+
+```{r spc, echo=FALSE, fig.height=4, fig.width=6, message=FALSE, warning=FALSE}
+library(NHSRplotthedots)
+library(NHSRdatasets)
+library(tidyverse)
+
+sub_set <- ae_attendances %>% 
+  filter(org_code == "RQM", type == 1, period < as.Date("2018-04-01"))
+
+sub_set %>%
+  ptd_spc(value_field = breaches, date_field = period, improvement_direction = "decrease")
+
+```
+
+]
+
+.pull-right[
+### Funnel Plots
+
+```{r funnel, echo=FALSE, fig.height=4, fig.width=6, message=FALSE, warning=FALSE}
+library(FunnelPlotR)
+library(COUNT)
+library(ggplot2)
+
+# lets use the 'medpar' dataset from the 'COUNT' package. Little reformatting needed
+data(medpar)
+medpar$provnum<-factor(medpar$provnum)
+medpar$los<-as.numeric(medpar$los)
+
+# Build glm to predict los (count so Poisson assumption)
+mod<- glm(los ~ hmo + died + age80 + factor(type), family="poisson", data=medpar)
+
+# Predict on to dataset
+medpar$prds<- predict(mod, type="response")
+
+b<-funnel_plot(numerator=medpar$los, denominator=medpar$prds, group = medpar$provnum, data_type = "SR",
+            title = 'Length of Stay Funnel plot for `medpar` data', draw_unadjusted = FALSE,
+            draw_adjusted = TRUE, sr_method = "SHMI", label="outlier", limit=99)
+
+
+b <- plot(b) +
+  guides(color=guide_legend(nrow=2, byrow=TRUE))+
+  theme(panel.grid = element_line(color = "grey70")
+        ,  plot.background = element_rect(color = "grey", size = 1) # border around whole plot
+        ,  plot.margin = unit(c(5, 5, 5, 5), "mm"))
+
+print(b)
+
+```
+]
+
+---
+
+# Methods
+
+.pull-left[
++ Statistical analysis:
+  + Hypothesis testing
+  + Generalized Linear Modelling (e.g linear regression, logistic regression)
+  + Time series (e.g. ARIMA)
+]
+
+--
+
+<img src="https://imgs.xkcd.com/comics/correlation.png">
+https://xkcd.com/552/
+
+--
+
+.pull-right[
+## Causal Inference
+
++ Consider causal pathway!!!
+
+{{content}}
+
+]
+
+--
+
++ Difference-in-Difference
++ Regression Discontinuity analysis
+
+
+
+---
+class: middle inverse
+
+# Example: NEWS2 Deterioration Scores and mortality
+
+---
+
+## Current progress on Causal Path
+
+<p align = "center"><img src="./assets/img/dagitty-model2.png" height="360"></p>
+
+
+> _"...Since all models are wrong the scientist must be alert to what is importantly wrong. It is inappropriate to be concerned about mice when there are tigers abroad..."_
+
+.footnote[Box, G. E. P. (1976). "Science and Statistics". In: Journal of the American Statistical Association 71.356, pp. 791-799. DOI: 10.1080/01621459.1976.10480949. URL: https://www.tandfonline.com/doi/abs/10.1080/01621459.1976.10480949.]
+
 
 ---
 class: inverse center middle
@@ -223,12 +401,3 @@ __Source:__ xkcd: A webcomic of romance, sarcasm, math, and language
 
 https://xkcd.com/2048/
 ]
-
----
-class: references
-
-### References
-
-```{r, results='asis', echo=FALSE}
-PrintBibliography(bib)
-```
