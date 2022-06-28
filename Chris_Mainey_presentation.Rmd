@@ -199,7 +199,7 @@ class: inverse middle
 ## The Patient Safety Strategy
 
 
-<p align="center"><img src="./assets/img/PSStrategy.png" height="100%"></p>
+<p align="center"><img src="./assets/img/PSStrategy.png" height="470"></p>
 
 
 
