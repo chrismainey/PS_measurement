@@ -4,7 +4,7 @@
     <title>Analytics &amp; Measurement in Patient Safety</title>
     <meta charset="utf-8" />
     <meta name="author" content="Chris Mainey" />
-    <meta name="date" content="2022-06-27" />
+    <meta name="date" content="2022-06-28" />
     <script src="Chris_Mainey_presentation_files/header-attrs/header-attrs.js"></script>
     <link rel="stylesheet" href="theme.css" type="text/css" />
   </head>
@@ -51,7 +51,7 @@ class: inverse center middle
 ]
 
 .pull-right[
-&lt;img src="https://media1.giphy.com/media/H5Ax4wLi7D7Elausl4/giphy.gif?cid=790b7611e64490feb1ebb99c89c34c151f68560728d983ec&amp;rid=giphy.gif&amp;ct=g" width="480" height="270"&gt;&lt;/img&gt;&lt;p&gt;&lt;a href="https://giphy.com/gifs/curbyourenthusiasm-season-10-curb-season10-H5Ax4wLi7D7Elausl4"&gt;via GIPHY&lt;/a&gt;&lt;/p&gt;
+&lt;img src="https://media1.giphy.com/media/H5Ax4wLi7D7Elausl4/giphy.gif?cid=790b7611e64490feb1ebb99c89c34c151f68560728d983ec&amp;rid=giphy.gif&amp;ct=g" width="480" height="270"&gt;&lt;/img&gt;
 ]
 
 
@@ -63,7 +63,7 @@ class: inverse center middle
 
 --
 
-+ Public Health - Cancer registry on to "Cancer Network."
++ Public Health - Cancer registry -&gt; on to "Cancer Network."
 
 --
 
@@ -102,14 +102,14 @@ class: inverse center middle
 + Presentation to others
 
 
-
-__It's OK to not understand, but work with people who do...__
+&lt;br&gt;
+__It's OK to not understand everything, but work with people who do...__
 
 ]
 
 .pull-right[
 
-&lt;img src="https://lovestats.files.wordpress.com/2012/07/low-error-rate-meme.jpg"&gt;
+&lt;img src="https://lovestats.files.wordpress.com/2012/07/low-error-rate-meme.jpg" height="350"&gt;
 
 ]
 
@@ -121,17 +121,19 @@ __It's OK to not understand, but work with people who do...__
 + Asking the right question
 + Sector knowledge / dataset knowledge
 + Study design / how to answer questions
-+ Statistical analysis / modelling
++ Analytical programming language e.g. R or Python
++ Statistical analysis / Modelling / Machine learning methods
 + Collaborative working
   + With other disciplines / clinical colleagues
 
+&lt;br&gt;
 __You can't be good at everything, specialising is good__
 
 ]
 
 .pull-right[
  
-&lt;img src="http://37.media.tumblr.com/tumblr_m0w7ccQomh1rpjhxuo1_400.jpg"&gt;
+&lt;img src="http://37.media.tumblr.com/tumblr_m0w7ccQomh1rpjhxuo1_400.jpg" height="350"&gt;
  
  ]
 
@@ -143,19 +145,19 @@ __You can't be good at everything, specialising is good__
  
 + Designing measurement / analytical plans
 + Balancing detail / signal and story
-+ Reproducible Analytical Pipelines (RAP)
-+ Within analysis projects
++ Reproducible Analytical Pipelines (RAP) / MLops / DataOps
 + Communicating uncertainty in analysis
-+ Causal Inference
 + Ability to apply emerging methods
++ __Causal Inference__
 
+&lt;br&gt;
 __Too many specialties...can't keep up with everything...__
 
  ]
 
 .pull-right[
 
-&lt;img src="https://lovestats.files.wordpress.com/2012/07/what-if-i-told-you-research-methods-meme.jpg"&gt;
+&lt;img src="https://lovestats.files.wordpress.com/2012/07/what-if-i-told-you-research-methods-meme.jpg" height="350"&gt;
 
 ]
 
@@ -166,25 +168,13 @@ class: inverse middle
 # National Patient Safety Team at NHSEI
 
 ---
-.pull-left[
+
 ## The Patient Safety Strategy
 
-&lt;br&gt;
-### Insight
 
-&lt;br&gt;
-### Involvement
+&lt;p align="center"&gt;&lt;img src="./assets/img/PSStrategy.png" height="100%"&gt;&lt;/p&gt;
 
-&lt;br&gt;
-### Improvement
 
-]
-
-.pull-right[
-
-&lt;img src="./assets/img/PSStrategy.png" height="100%"&gt;&lt;/p&gt;
-
-]
 
 .footnote[
 https://www.england.nhs.uk/patient-safety/the-nhs-patient-safety-strategy/#patient-safety-strategy
@@ -198,11 +188,25 @@ class: inverse middle
 
 ---
 
-# Using Incident reporting data
+## Using incident reporting data
 
+### "Patient Safety I"
+
++ Harvard Medical Practice Study
++ IoM: To Err is Human
++ NHS: An Organisation with a Memory
+
+&gt; “Organisations should demonstrate that they have in place fully functional reporting systems for serious incidents, that staff know how to use them, that the systems are used, and that appropriate action is taken in response to incidents, including provision of appropriate support to the affected patients and their carers.” -Berwick, D (2013)
+
+.footnote[Berwick D. A Promise to Learn—a Commitment to Act: Improving the Safety of Patients in England. London: Department of Health; 2013;6.]
+
+--
+
+&lt;br&gt;
 + Clinical (qualitative review) is major method
-+ Finding relevant incidents
 + Quantitative approaches being reduced deliberately
+
++ Finding relevant incidents is a key question
 + Natural Language Processing (NLP)
 
 ---
@@ -266,35 +270,35 @@ __IHI and API improvement process diagram: http://www.apiweb.org/__
 
 ---
 
-# Methods
+## Methods
+
 
 .pull-left[
-+ Statistical analysis:
++ __Statistical analysis:__
   + Hypothesis testing
   + Generalized Linear Modelling (e.g linear regression, logistic regression)
-  + Time series (e.g. ARIMA)
+  + Multilevel Models (GLMM, random-intercept)
+  + Time series (e.g. ETS or ARIMA)
+  + Generalized Additive Models (GAMs)
 ]
 
---
 
-&lt;img src="https://imgs.xkcd.com/comics/correlation.png"&gt;
-https://xkcd.com/552/
 
---
 
 .pull-right[
-## Causal Inference
-
-+ Consider causal pathway!!!
-
++ __Causal Inference:__
+  + Consider causal pathway!!!
+  + Temporal Order
+  + Confounders, Mediators etc.
 {{content}}
-
 ]
+&lt;br&gt;&lt;br&gt;
+&lt;p align = "center"&gt;&lt;img src="https://imgs.xkcd.com/comics/correlation.png"&gt;&lt;br&gt;
+&lt;a href="https://xkcd.com/552/"&gt;https://xkcd.com/552/&lt;/a&gt;&lt;/p&gt;
 
 --
-
-+ Difference-in-Difference
-+ Regression Discontinuity analysis
+  + Difference-in-Difference
+  + Regression Discontinuity analysis
 
 
 
@@ -310,10 +314,48 @@ class: middle inverse
 &lt;p align = "center"&gt;&lt;img src="./assets/img/dagitty-model2.png" height="360"&gt;&lt;/p&gt;
 
 
-&gt; _"...Since all models are wrong the scientist must be alert to what is importantly wrong. It is inappropriate to be concerned about mice when there are tigers abroad..."_
+&gt; _"...Since all models are wrong the scientist must be alert to what is importantly wrong. It is inappropriate to be concerned about mice when there are tigers abroad..."_ Box, GEP (1976)
 
 .footnote[Box, G. E. P. (1976). "Science and Statistics". In: Journal of the American Statistical Association 71.356, pp. 791-799. DOI: 10.1080/01621459.1976.10480949. URL: https://www.tandfonline.com/doi/abs/10.1080/01621459.1976.10480949.]
 
+
+---
+# Summary
+
+.pull-left[
+### Developmental:
++ Get experience in different areas to build your skills
+
++ Takes time to get experience, don't move too fast
+{{content}}
+]
+
+--
+
++ Think about your skill set, and whether new skills will deliver better results
+
++ Remember it is about the message, despite the importance of detail
+
+--
+
+.pull-right[
+### NHS Patient Safety:
++ Using incident reporting data to learn and build safer systems
+  + Clinical review is bottle-neck
+  + NLP methods can help provide targets
+{{content}}
+]
+
+--
++ Measuring improvement is an imperfect thing:
+  + Change over time or comparison against standards are main methods
+  + Over-reliance on SPC or run-chart
+  + All success is interpreted as due to programmes
+
+--
++ __We can do better:__
+  + Properly designed study conditions: e.g. stepped-wedge trials
+  + Causal Inference
 
 ---
 class: inverse center middle
@@ -323,11 +365,12 @@ class: inverse center middle
 
 .pull-right[
 
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
 
+## It's all about the message!!
 
-
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 __Source:__ xkcd: A webcomic of romance, sarcasm, math, and language
 
 'Curve-Fitting Methods and the messages they send'
@@ -338,7 +381,7 @@ https://xkcd.com/2048/
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
-"slideNumberFormat": "%current%",
+"slideNumberFormat": "%current%/%total%",
 "highlightStyle": "github",
 "highlightLines": true,
 "ratio": "16:9",
